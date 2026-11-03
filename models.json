@@ -1,0 +1,100 @@
+[
+ {
+  "name": "meta-llama__Llama-2-13b-hf",
+  "acc": 0.536,
+  "rank": 6,
+  "theta": 0.609,
+  "top_tier": false
+ },
+ {
+  "name": "meta-llama__Llama-2-70b-hf",
+  "acc": 0.692,
+  "rank": 1,
+  "theta": 2.547,
+  "top_tier": true
+ },
+ {
+  "name": "huggyllama__llama-65b",
+  "acc": 0.637,
+  "rank": 3,
+  "theta": 2.068,
+  "top_tier": true
+ },
+ {
+  "name": "mistralai__Mistral-7B-v0.1",
+  "acc": 0.626,
+  "rank": 4,
+  "theta": 1.705,
+  "top_tier": false
+ },
+ {
+  "name": "tiiuae__falcon-7b",
+  "acc": 0.273,
+  "rank": 10,
+  "theta": -1.433,
+  "top_tier": false
+ },
+ {
+  "name": "tiiuae__falcon-40b",
+  "acc": 0.559,
+  "rank": 5,
+  "theta": 1.051,
+  "top_tier": false
+ },
+ {
+  "name": "Qwen__Qwen-14B",
+  "acc": 0.663,
+  "rank": 2,
+  "theta": 2.025,
+  "top_tier": true
+ },
+ {
+  "name": "EleutherAI__gpt-j-6b",
+  "acc": 0.269,
+  "rank": 11,
+  "theta": -1.479,
+  "top_tier": false
+ },
+ {
+  "name": "EleutherAI__pythia-12b",
+  "acc": 0.265,
+  "rank": 12,
+  "theta": -1.35,
+  "top_tier": false
+ },
+ {
+  "name": "mosaicml__mpt-7b",
+  "acc": 0.276,
+  "rank": 9,
+  "theta": -1.385,
+  "top_tier": false
+ },
+ {
+  "name": "facebook__opt-13b",
+  "acc": 0.25,
+  "rank": 14,
+  "theta": -1.681,
+  "top_tier": false
+ },
+ {
+  "name": "bigscience__bloom-7b1",
+  "acc": 0.261,
+  "rank": 13,
+  "theta": -1.473,
+  "top_tier": false
+ },
+ {
+  "name": "stabilityai__stablelm-3b-4e1t",
+  "acc": 0.446,
+  "rank": 7,
+  "theta": -0.136,
+  "top_tier": false
+ },
+ {
+  "name": "openlm-research__open_llama_7b",
+  "acc": 0.302,
+  "rank": 8,
+  "theta": -1.07,
+  "top_tier": false
+ }
+]
