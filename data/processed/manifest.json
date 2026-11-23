@@ -1,0 +1,1273 @@
+{
+ "harness": {
+  "name": "lighteval",
+  "sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+  "task": "harness|hendrycksTest|5 (5-shot MMLU)"
+ },
+ "sources": {
+  "results": {
+   "repo": "open-llm-leaderboard-old/results",
+   "revision": "23474373f8874f9057d23b97e5a41e911d2721c5"
+  },
+  "requests": {
+   "repo": "open-llm-leaderboard-old/requests",
+   "revision": "56486a8023577caeb30ba13ff89d0d35af13de89"
+  },
+  "mmlu_redux": {
+   "repo": "edinburgh-dawg/mmlu-redux-2.0",
+   "revision": "372ea425445d51e1ba1188c56e5e893f8138621f"
+  },
+  "answer_key": {
+   "model": "mistralai/Mistral-7B-v0.1",
+   "run": "2023-09-27T15-30-59.039834",
+   "revision": "7b4f5b61de1f8f11f143aa59f90349d79b8d16e5"
+  }
+ },
+ "join": {
+  "n_models": 150,
+  "n_questions": 14042,
+  "n_redux": 5700,
+  "redux_matched": 5699,
+  "redux_match_rate": 0.9998,
+  "by_tier": {
+   "exact_with_options": 5690,
+   "fuzzy": 8,
+   "exact_question": 1
+  },
+  "official_key_agrees_with_redux": 1.0,
+  "unparsed_queries": 0,
+  "key_vs_recorded_acc_conflicts": 0,
+  "key_check_cells": 2106300
+ },
+ "failed_downloads": [
+  {
+   "model": "stabilityai/stable-code-3b",
+   "status": "failed: expected 57 files, found 0"
+  },
+  {
+   "model": "internlm/internlm2-7b",
+   "status": "failed: 401 Client Error. (Request ID: Root=1-6aea8f3b-01cb16cb286832596329c7e3;52939714-48ff-4bf4-80a3-baf6"
+  }
+ ],
+ "models": [
+  {
+   "model": "joey00072/ToxicHermes-2.5-Mistral-7B",
+   "run": "2023-12-23T17-12-50.867091",
+   "revision": "ddafa7b58824fb4a41c33cdb0c8bcff0843f4471",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "hermes",
+   "origin": "derived"
+  },
+  {
+   "model": "dawn17/StarlingMaid-2x7B-base",
+   "run": "2024-04-03T07-38-13.371525",
+   "revision": "388d40622e29f81a11a3203dd94a7fcc83673ebb",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "starling",
+   "origin": "derived"
+  },
+  {
+   "model": "yam-peleg/Hebrew-Mistral-7B",
+   "run": "2024-04-29T02-57-50.285081",
+   "revision": "46f2fc624303b3b56e52970f966a5918aced2bf0",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mistral",
+   "origin": "base"
+  },
+  {
+   "model": "MaziyarPanahi/WizardLM-Math-70B-v0.1",
+   "run": "2024-02-18T02-24-17.988962",
+   "revision": "dcfd2e8a13a165468d7721024b10a390eb77ee99",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "wizard",
+   "origin": "derived"
+  },
+  {
+   "model": "gordicaleksa/YugoGPT",
+   "run": "2024-03-01T01-21-19.326910",
+   "revision": "abc111b4f620e2a7c2a5312edcf300d213a6d4d1",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "other",
+   "origin": "base"
+  },
+  {
+   "model": "databricks/dbrx-base",
+   "run": "2024-03-29T19-43-50.174614",
+   "revision": "96b051d2501e06e5a8c473d0fd086b9cd39a84fc",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "dbrx",
+   "origin": "base"
+  },
+  {
+   "model": "SF-Foundation/Ein-72B-v0.12",
+   "run": "2024-02-13T11-06-19.237402",
+   "revision": "99052f27b8105c1abf938a00a2466bedc261c1f9",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "smaug",
+   "origin": "derived"
+  },
+  {
+   "model": "xriminact/TarsChattyBasev0.2",
+   "run": "2024-01-16T14-41-25.883812",
+   "revision": "75df64b0559265a3ca3ab73d07dfde5461d9c3bc",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "zephyr",
+   "origin": "derived"
+  },
+  {
+   "model": "andysalerno/openchat-nectar-0.4",
+   "run": "2024-01-13T21-31-07.575473",
+   "revision": "29b68f60e696038a887d5cd9ec70b75a44b07762",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "openchat",
+   "origin": "derived"
+  },
+  {
+   "model": "chargoddard/internlm2-base-7b-llama",
+   "run": "2024-01-21T22-11-28.111983",
+   "revision": "42c6d7830d5c28c41905cca51994f54891418a59",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "internlm",
+   "origin": "base"
+  },
+  {
+   "model": "Qwen/Qwen1.5-110B",
+   "run": "2024-04-29T23-40-59.912577",
+   "revision": "6cd47bdbb22d5e162bac2392f29371152593fa92",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "qwen",
+   "origin": "base"
+  },
+  {
+   "model": "allenai/OLMo-1.7-7B-hf",
+   "run": "2024-04-23T04-38-27.071305",
+   "revision": "850c484ae1991fef80b2c82ff70f04207ef645ad",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "olmo",
+   "origin": "base"
+  },
+  {
+   "model": "macadeliccc/SOLAR-math-2x10.7b-v0.2",
+   "run": "2024-01-20T21-45-30.967248",
+   "revision": "3ecef7d5c38d205b9b5b207bc5d0c83dd840cdf0",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "solar",
+   "origin": "base"
+  },
+  {
+   "model": "duoqi/Nanbeige-16B-Base-Llama",
+   "run": "2024-01-18T13-45-09.426165",
+   "revision": "3e2da0659a80bc5d057fb357ccecc370d130f74a",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "llama",
+   "origin": "base"
+  },
+  {
+   "model": "chujiezheng/tulu-2-dpo-70b-ExPO",
+   "run": "2024-05-01T06-15-53.010627",
+   "revision": "4be3806d455195efc4bf4e9fb9faa86c4c293e8a",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "tulu",
+   "origin": "derived"
+  },
+  {
+   "model": "nxn1231/yi6",
+   "run": "2024-02-14T09-04-41.183373",
+   "revision": "230caebf06ac160c4f78c997baa4b33fabde42f0",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "yi",
+   "origin": "base"
+  },
+  {
+   "model": "macadeliccc/laser-dolphin-mixtral-2x7b-dpo",
+   "run": "2024-01-14T01-13-57.359475",
+   "revision": "f93286104328116a0382df20e6b8a42e09e04ab4",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "dolphin",
+   "origin": "base"
+  },
+  {
+   "model": "liuchanghf/bloomz-3b-mmlu-lora",
+   "run": "2024-04-15T10-33-12.367170",
+   "revision": "57eca6f6ff2a83c75092ea6a4a14b47773f6b42f",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "bloom",
+   "origin": "derived"
+  },
+  {
+   "model": "LeroyDyer/Mixtral_AI_CyberTron_Ultra",
+   "run": "2024-04-15T22-22-11.483924",
+   "revision": "e42cbb725579a2b678218c5326edae5e58fb4b23",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mixtral",
+   "origin": "base"
+  },
+  {
+   "model": "hfl/chinese-alpaca-2-7b-16k",
+   "run": "2024-05-30T04-33-38.237180",
+   "revision": "49cce1cbb6931c149cc06fc69c498ff05b418ba5",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "alpaca",
+   "origin": "derived"
+  },
+  {
+   "model": "google/recurrentgemma-2b",
+   "run": "2024-04-26T21-09-47.796009",
+   "revision": "944298e14f099e4e9a6a65c31b5892d31e42aca3",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "gemma",
+   "origin": "base"
+  },
+  {
+   "model": "tiiuae/falcon-11B",
+   "run": "2024-05-10T12-22-42.795732",
+   "revision": "50b8a197861616e14d7b7ff3627678c8436a95ea",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "falcon",
+   "origin": "base"
+  },
+  {
+   "model": "nnethercott/llava-v1.5-7b-hf-vicuna",
+   "run": "2024-02-23T22-56-58.109084",
+   "revision": "19db3eb2355253b1b9c8839e095e59f06cd417c2",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "vicuna",
+   "origin": "base"
+  },
+  {
+   "model": "deepseek-ai/deepseek-coder-6.7b-base",
+   "run": "2024-04-02T21-41-57.054032",
+   "revision": "b13210b0b8f7031ac12427d321332adef7734e40",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "deepseek",
+   "origin": "base"
+  },
+  {
+   "model": "hamxea/StableBeluga-7B-activity-fine-tuned-v2",
+   "run": "2024-03-31T18-36-34.065271",
+   "revision": "c16a5be126aead199a6d640ef46758365101c26d",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "stable",
+   "origin": "derived"
+  },
+  {
+   "model": "unsloth/Phi-3-medium-4k-instruct",
+   "run": "2024-05-28T08-18-34.472725",
+   "revision": "efb36e76a7733f8b11dc163f451fa0a36271053a",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "phi",
+   "origin": "base"
+  },
+  {
+   "model": "mosaicml/mpt-7b-8k",
+   "run": "2024-01-16T14-43-48.109992",
+   "revision": "9cc7a95503b66d7c6aa67887dc2562eae1a4dd3e",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mpt",
+   "origin": "base"
+  },
+  {
+   "model": "macadeliccc/Orca-SOLAR-4x10.7b",
+   "run": "2024-01-14T10-39-27.836739",
+   "revision": "25c2673f71080904fb3d71e0c58a562db21cef29",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "orca",
+   "origin": "base"
+  },
+  {
+   "model": "stabilityai/stablelm-2-12b",
+   "run": "2024-04-09T19-45-46.529445",
+   "revision": "7fa311e4d8987def79c389d87029b12718939e58",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "stablelm",
+   "origin": "base"
+  },
+  {
+   "model": "cookinai/OrcaHermes-Mistral-70B-miqu",
+   "run": "2024-02-19T02-46-40.427802",
+   "revision": "f316927423211366c672042c7f1231a8c7b611ad",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "orca",
+   "origin": "derived"
+  },
+  {
+   "model": "FelixChao/MathDolphin-7B",
+   "run": "2024-01-14T13-48-07.624647",
+   "revision": "769b1b78c9dd7814175057cb4e9b759a0664e1e3",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "dolphin",
+   "origin": "derived"
+  },
+  {
+   "model": "seyf1elislam/WestKunai-Hermes-10.7b-test",
+   "run": "2024-03-21T21-56-56.128733",
+   "revision": "50e95c333bb9bd3794ff5cc6a5d8c7f5c6979397",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "hermes",
+   "origin": "derived"
+  },
+  {
+   "model": "databricks/dbrx-instruct",
+   "run": "2024-05-24T05-09-36.211994",
+   "revision": "e2a6f71fc8d4220ac1573aaebd5ec7c9be7f08eb",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "dbrx",
+   "origin": "derived"
+  },
+  {
+   "model": "mrfakename/WizardChatML-7B-v0",
+   "run": "2024-04-19T04-25-21.243090",
+   "revision": "f732c6e3d0979ea9da0efeb080fabe6f80340ba3",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "wizard",
+   "origin": "derived"
+  },
+  {
+   "model": "Xenon1/MetaModel_moex8",
+   "run": "2024-01-11T02-53-29.690777",
+   "revision": "5771ada211db135646aaddd10005b6e4e0118bb7",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "other",
+   "origin": "base"
+  },
+  {
+   "model": "AmberYifan/test-spin-lora-iter2",
+   "run": "2024-04-17T06-00-49.810983",
+   "revision": "258122bc627c5fba28f20f5e51c8fb07ea7f6cda",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "zephyr",
+   "origin": "derived"
+  },
+  {
+   "model": "andysalerno/openchat-nectar-0.14",
+   "run": "2024-01-23T23-09-38.113022",
+   "revision": "cb80eea96da61d90d7345e231fdb605dde234dbd",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "openchat",
+   "origin": "derived"
+  },
+  {
+   "model": "unsloth/mistral-7b-v0.2",
+   "run": "2024-03-24T15-13-21.174682",
+   "revision": "de32daea95b6f02e0eb916a2764791264eb5be1f",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mistral",
+   "origin": "base"
+  },
+  {
+   "model": "chargoddard/internlm2-20b-llama",
+   "run": "2024-01-18T17-52-12.379059",
+   "revision": "da840bf8288e0eb8945417b76dfee4df29a295d9",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "internlm",
+   "origin": "base"
+  },
+  {
+   "model": "meta-llama/Meta-Llama-3-8B",
+   "run": "2024-05-28T19-40-23.721752",
+   "revision": "db0a9a321c769ebd745b28f3509a6f14ee9a3eb5",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "llama",
+   "origin": "base"
+  },
+  {
+   "model": "01-ai/Yi-1.5-9B-32K",
+   "run": "2024-05-25T18-20-24.039645",
+   "revision": "ed9fab8a3466f65f21c7788bab84220fdd87361e",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "yi",
+   "origin": "base"
+  },
+  {
+   "model": "allknowingroger/StarlingDolphin-7B-slerp",
+   "run": "2024-04-10T20-24-12.713848",
+   "revision": "6977f64d187096f1f1701b803b337f7e20aedf59",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "starling",
+   "origin": "derived"
+  },
+  {
+   "model": "cloudyu/Mixtral_7Bx4_MOE_24B",
+   "run": "2023-12-23T18-05-51.243288",
+   "revision": "1cf075610413b1bbff39bb035a8e015050b3dc60",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mixtral",
+   "origin": "base"
+  },
+  {
+   "model": "namirocks/vicuna-tutor-shishya-model-7b-ep3",
+   "run": "2024-01-27T21-53-36.440514",
+   "revision": "54d79c5d644b0bcc3c014b7c6eb65622671efa22",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "vicuna",
+   "origin": "derived"
+  },
+  {
+   "model": "aivince/alpaca_mistral-7b-v0.2",
+   "run": "2024-03-24T15-11-51.447226",
+   "revision": "db195a62e0300ba4f356db4e6cbda28a1b3b3196",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "alpaca",
+   "origin": "derived"
+  },
+  {
+   "model": "Qwen/Qwen2-beta-14B",
+   "run": "2024-01-29T15-38-03.755073",
+   "revision": "d34305cc98acc67e6fa9cd46b7b7e7223194c17a",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "qwen",
+   "origin": "base"
+  },
+  {
+   "model": "Technoculture/Medtulu-2x7b",
+   "run": "2024-01-16T08-08-44.091130",
+   "revision": "e037ed9e49cb7f0ecb253bdbaded0b8cde385c1a",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "tulu",
+   "origin": "derived"
+  },
+  {
+   "model": "liuchanghf/bloomz3b-winogrande-pretrain",
+   "run": "2024-04-24T14-32-20.496429",
+   "revision": "e3b8f3fd85bf2ff0f9510394564f193a8179fc70",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "bloom",
+   "origin": "derived"
+  },
+  {
+   "model": "yanolja/KoSOLAR-10.7B-v0.3",
+   "run": "2024-02-09T18-39-14.324188",
+   "revision": "7132250dc17703b96da20a3d52d766e5740a0c55",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "solar",
+   "origin": "base"
+  },
+  {
+   "model": "saucam/aqua-smaug-0.3-8B",
+   "run": "2024-04-23T04-34-39.513243",
+   "revision": "df599f9752cf377e5948b38478a13c67fd4ca5ea",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "smaug",
+   "origin": "derived"
+  },
+  {
+   "model": "jsfs11/TemptressTensor-10.7B-v0.1a",
+   "run": "2024-05-03T00-05-57.015936",
+   "revision": "c291673dcc171340fd4056fb8d6ffcb2ae5f31fb",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mpt",
+   "origin": "derived"
+  },
+  {
+   "model": "unsloth/Phi-3-mini-4k-instruct",
+   "run": "2024-05-11T09-01-37.683976",
+   "revision": "806f05e6c2b524abdd950ed5698f83e0737114d2",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "phi",
+   "origin": "base"
+  },
+  {
+   "model": "deepseek-ai/deepseek-moe-16b-base",
+   "run": "2024-01-15T06-33-48.729928",
+   "revision": "63e24d2125f0704568d4a25adf2a1247bd16f976",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "deepseek",
+   "origin": "base"
+  },
+  {
+   "model": "google/gemma-7b",
+   "run": "2024-02-23T18-01-00.586646",
+   "revision": "7564338502c91c9291ecb04ea4718d75d3cd1043",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "gemma",
+   "origin": "base"
+  },
+  {
+   "model": "stabilityai/stablelm-2-1_6b",
+   "run": "2024-01-24T10-43-24.406547",
+   "revision": "7b0fe7a1b42a62961cded6f41af1a8125d0df0a0",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "stablelm",
+   "origin": "base"
+  },
+  {
+   "model": "Locutusque/Orca-2-13b-SFT-v4",
+   "run": "2024-02-18T01-19-01.449787",
+   "revision": "40ce124f67d9f5bf44f5d6542c301d9f83393d94",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "orca",
+   "origin": "derived"
+  },
+  {
+   "model": "google/gemma-7b-it",
+   "run": "2024-02-22T15-34-10.620055",
+   "revision": "00518c3583e3bb0931967b18542260fc2d79c0c7",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "gemma",
+   "origin": "derived"
+  },
+  {
+   "model": "ibivibiv/dolphin-ultrafeedback-dpo",
+   "run": "2024-05-10T19-01-54.977258",
+   "revision": "7fa1cf9981c97414be772ed2ae419314d83aaa81",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "dolphin",
+   "origin": "derived"
+  },
+  {
+   "model": "abacusai/Smaug-70B-v0.1",
+   "run": "2024-02-03T05-35-28.928800",
+   "revision": "58499fe853faa2ce518aea448733315968e254b4",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "smaug",
+   "origin": "derived"
+  },
+  {
+   "model": "hon9kon9ize/cantonesellm-cpt-202405",
+   "run": "2024-05-25T14-20-27.941258",
+   "revision": "6f182797fa5da8f7962ffeb2b63327ac8ad05344",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "other",
+   "origin": "base"
+  },
+  {
+   "model": "jikaixuan/test",
+   "run": "2023-12-30T00-21-29.315161",
+   "revision": "ec1bb02257c53fc131424d276c9a757f0a6cfb0e",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "zephyr",
+   "origin": "derived"
+  },
+  {
+   "model": "microsoft/Phi-3-medium-128k-instruct",
+   "run": "2024-05-31T15-18-19.686646",
+   "revision": "297ce1dea5a8a63d1e71737f0ddd776355abc4e4",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "phi",
+   "origin": "derived"
+  },
+  {
+   "model": "NousResearch/Hermes-2-Theta-Llama-3-8B",
+   "run": "2024-05-27T00-35-30.762626",
+   "revision": "f817b3080ddfbc3e112beab3b52fdf93c9d2066f",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "hermes",
+   "origin": "derived"
+  },
+  {
+   "model": "umd-zhou-lab/recycled-wizardlm-7b-v2.0",
+   "run": "2024-01-10T17-00-52.120363",
+   "revision": "df351f0af9640a3b1c512eb6c0e4a0b8e1f58378",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "wizard",
+   "origin": "derived"
+  },
+  {
+   "model": "01-ai/Yi-1.5-34B-32K",
+   "run": "2024-05-26T07-04-09.158901",
+   "revision": "aa6c56c9c3eed5cdad7383e0ab38ca0b20277c1a",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "yi",
+   "origin": "base"
+  },
+  {
+   "model": "deepseek-ai/deepseek-math-7b-base",
+   "run": "2024-03-15T10-41-41.444832",
+   "revision": "a5bae5ca774c502e1d2809897a5e897a4aea9f0c",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "deepseek",
+   "origin": "derived"
+  },
+  {
+   "model": "Replete-AI/Mistral-11b-v0.1",
+   "run": "2024-03-21T12-30-39.267532",
+   "revision": "a42e4fe2854f01de008033c1dbb98e14e888d7ee",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mistral",
+   "origin": "base"
+  },
+  {
+   "model": "prince-canuma/Llama-3-6B-v0.1",
+   "run": "2024-05-25T16-37-32.667448",
+   "revision": "8f672ef19bb368ec2d68761a19acb9309b77176f",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "llama",
+   "origin": "base"
+  },
+  {
+   "model": "grimjim/cuckoo-starling-7B",
+   "run": "2024-05-22T23-32-03.745693",
+   "revision": "6360b1ee9826c5032875b8489fb1ca047070dcd8",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "starling",
+   "origin": "derived"
+  },
+  {
+   "model": "CallComply/openchat-3.5-0106-11b",
+   "run": "2024-01-14T19-16-22.396289",
+   "revision": "ff4150f5b27919f149c49ad2fb5133178647a7a8",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "openchat",
+   "origin": "derived"
+  },
+  {
+   "model": "intervitens/internlm2-base-20b-llama",
+   "run": "2024-01-18T19-55-30.426442",
+   "revision": "e603e69901503122ebe4e2e1027d1b33d0601c32",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "internlm",
+   "origin": "base"
+  },
+  {
+   "model": "stabilityai/stablelm-2-1_6b-chat",
+   "run": "2024-04-16T20-27-54.853847",
+   "revision": "44be12e42d44034d3b1a4a9f71fdce510d10d40f",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "stablelm",
+   "origin": "derived"
+  },
+  {
+   "model": "ibivibiv/alpaca-dragon-72b-v1",
+   "run": "2024-02-10T01-36-35.503154",
+   "revision": "5fa5f8c33bdb4430eb20d1d950d1249d111f16d0",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "alpaca",
+   "origin": "derived"
+  },
+  {
+   "model": "luffycodes/vicuna-class-shishya-ac-hal-13b-ep3",
+   "run": "2023-12-23T17-04-02.519705",
+   "revision": "ec0d15dd4d3ab4e1473d4c591de88b8e23d2d2be",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "vicuna",
+   "origin": "derived"
+  },
+  {
+   "model": "chujiezheng/tulu-2-dpo-7b-ExPO",
+   "run": "2024-04-29T02-01-44.900070",
+   "revision": "a4fe912cf6fb07a5caa4ee3d404d5403b98bdaf7",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "tulu",
+   "origin": "derived"
+  },
+  {
+   "model": "Cartinoe5930/SOLAR-DUS-implement",
+   "run": "2024-01-16T14-37-28.066845",
+   "revision": "b3df72df5a7ddaf3e11ef723dce598cb32adb9f5",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "solar",
+   "origin": "base"
+  },
+  {
+   "model": "HIT-SCIR/Chinese-Mixtral-8x7B",
+   "run": "2024-02-09T23-17-17.937361",
+   "revision": "bac8c8f6aa55bd9e557c8cbe6159bc7a960fa42a",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mixtral",
+   "origin": "base"
+  },
+  {
+   "model": "Qwen/Qwen1.5-1.8B",
+   "run": "2024-02-18T05-41-51.154248",
+   "revision": "7de9acc248201d00e5a8a7164b940e9b4cd29d37",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "qwen",
+   "origin": "base"
+  },
+  {
+   "model": "langgptai/bloomz-7b1-sa-v0.1",
+   "run": "2024-05-30T16-19-23.609396",
+   "revision": "c11934fd72837c7bb03cc978b1bd52c36e74dec3",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "bloom",
+   "origin": "derived"
+  },
+  {
+   "model": "kimwooglae/AISquare-Instruct-SOLAR-10.7b-v0.5.32",
+   "run": "2024-01-22T04-57-39.972792",
+   "revision": "8376f494f02a85d47069d61c351c27d7bbe72451",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "solar",
+   "origin": "derived"
+  },
+  {
+   "model": "cognitivecomputations/dolphin-2.2-yi-34b-200k",
+   "run": "2023-12-30T04-55-41.011890",
+   "revision": "139b52b54cd463659b819e2847d26042733222de",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "dolphin",
+   "origin": "derived"
+  },
+  {
+   "model": "jsfs11/WestOrcaNeural-V2-DARETIES-7B",
+   "run": "2024-01-25T11-13-58.761964",
+   "revision": "238b728722e4f9317f204d67f20fb10a95a417c0",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "orca",
+   "origin": "derived"
+  },
+  {
+   "model": "juhwanlee/gemma-7B-alpaca-case-0-2",
+   "run": "2024-03-27T17-36-28.950988",
+   "revision": "32dff73938c69fc817ebad83ddbec1285c184384",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "gemma",
+   "origin": "derived"
+  },
+  {
+   "model": "Yuma42/KangalKhan-Alpha-Sapphiroid-7B-Fixed",
+   "run": "2024-04-26T02-06-34.921242",
+   "revision": "cc5663464f5113d2acee34757c9fdda4b07b347d",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "phi",
+   "origin": "derived"
+  },
+  {
+   "model": "linlinlin/zephy_SFT_Hermes",
+   "run": "2024-03-11T19-07-56.840567",
+   "revision": "54a7f87a70f31c404555b1ee7987020bb1392202",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "hermes",
+   "origin": "derived"
+  },
+  {
+   "model": "wandb/zephyr-orpo-7b-v0.2",
+   "run": "2024-04-15T15-46-25.433441",
+   "revision": "f8af922543bfa30d1a8730661e84c7a69d5af204",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "zephyr",
+   "origin": "derived"
+  },
+  {
+   "model": "Technoculture/Medmerge-tulu-70b",
+   "run": "2024-02-02T08-57-05.202526",
+   "revision": "aed8001511ddf561beaacbd098e67e24c15f0d81",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "tulu",
+   "origin": "derived"
+  },
+  {
+   "model": "freecs/ThetaWave-28B-v0.1",
+   "run": "2024-01-28T16-24-41.257091",
+   "revision": "a7d0e708423b9cdf76c952d0d0d0b6f0a1ad2c36",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "other",
+   "origin": "base"
+  },
+  {
+   "model": "OpenBuddy/openbuddy-deepseekcoder-33b-v16.1-32k",
+   "run": "2024-01-08T05-49-52.384662",
+   "revision": "bfd836a2d426dfcd06310a9053827583f62de153",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "deepseek",
+   "origin": "derived"
+  },
+  {
+   "model": "hfl/chinese-llama-2-7b-16k",
+   "run": "2024-05-30T06-02-30.168762",
+   "revision": "32032436def4379f23349da2a24fef4b4147a945",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "llama",
+   "origin": "base"
+  },
+  {
+   "model": "perlthoughts/openchat-3.5-1210-32k",
+   "run": "2024-01-04T11-53-58.629434",
+   "revision": "3a31db4b84efeaa6fc2fa009c6d4da725111b844",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "openchat",
+   "origin": "derived"
+  },
+  {
+   "model": "CallComply/Starling-LM-11B-alpha",
+   "run": "2024-01-14T22-50-55.626486",
+   "revision": "91dba49e507b26408827372c45e6899f7b4fb59a",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "starling",
+   "origin": "derived"
+  },
+  {
+   "model": "saucam/aqua-smaug-hermes-8B",
+   "run": "2024-05-10T15-10-48.617857",
+   "revision": "457c7899562ed13ed199ec54b22b8d5e592ffd42",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "smaug",
+   "origin": "derived"
+  },
+  {
+   "model": "01-ai/Yi-1.5-6B",
+   "run": "2024-05-30T17-21-52.581058",
+   "revision": "cde2e8184fff9b059fa25407553f2a043b97e6fb",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "yi",
+   "origin": "base"
+  },
+  {
+   "model": "Qwen/Qwen1.5-MoE-A2.7B",
+   "run": "2024-03-29T07-58-00.679489",
+   "revision": "3c9894777cd3bd3bf84ce4085341d39e8190a60b",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "qwen",
+   "origin": "base"
+  },
+  {
+   "model": "refine-ai/Power-WizardLM-2-13b",
+   "run": "2024-05-30T06-14-16.621425",
+   "revision": "dd25f2690ea431361c4311be16c3cc58e42231d4",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "wizard",
+   "origin": "derived"
+  },
+  {
+   "model": "chargoddard/internlm2-7b-llama",
+   "run": "2024-01-18T12-13-04.932540",
+   "revision": "f6baf247c3852b4bbf41acc305a5e5398900ef09",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "internlm",
+   "origin": "base"
+  },
+  {
+   "model": "AIGeekLabs/radiantloom-mixtral-8x7b-fusion",
+   "run": "2024-01-16T18-14-22.936356",
+   "revision": "04a80a2cbfce648ce947db644a351544a5ce6874",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mixtral",
+   "origin": "base"
+  },
+  {
+   "model": "Charlie911/vicuna-MultiLoRA-sharegpt-mmlu-drop-ffn-1.0general",
+   "run": "2024-03-01T00-49-28.631373",
+   "revision": "cc0f2690c11c438b38cde736ce1b7f0d86325525",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "vicuna",
+   "origin": "derived"
+  },
+  {
+   "model": "umd-zhou-lab/claude2-alpaca-13B",
+   "run": "2024-01-10T17-36-10.265917",
+   "revision": "15127079b76a866e1d377eddd9cbefaa86f7a47e",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "alpaca",
+   "origin": "derived"
+  },
+  {
+   "model": "mistralai/Mixtral-8x22B-v0.1",
+   "run": "2024-04-18T04-08-50.327748",
+   "revision": "17b0f306f77412609144e46355f83d560da02534",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mistral",
+   "origin": "base"
+  },
+  {
+   "model": "stabilityai/stablelm-2-12b-chat",
+   "run": "2024-04-19T04-44-10.886217",
+   "revision": "3f55c4b011aefb2c8003e463136967976ce4446b",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "stablelm",
+   "origin": "derived"
+  },
+  {
+   "model": "Walmart-the-bag/Yi-6B-Infinity-Chat",
+   "run": "2023-12-27T12-43-24.987428",
+   "revision": "1f20c99d0a44c961e4b7efd48c95d23661bcd483",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "yi",
+   "origin": "derived"
+  },
+  {
+   "model": "binbi/Ein-72B-v0.1",
+   "run": "2024-02-05T14-07-01.496774",
+   "revision": "f97aa209c789b8f3b10abab58ebba9f1e590105c",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "smaug",
+   "origin": "derived"
+  },
+  {
+   "model": "kodonho/SolarM-SakuraSolar-SLERP",
+   "run": "2024-01-13T17-26-45.129484",
+   "revision": "f26e6a73877bb3292ba339d7ef3ee169e0eab72e",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "solar",
+   "origin": "derived"
+  },
+  {
+   "model": "grimjim/madwind-wizard-7B",
+   "run": "2024-05-07T00-58-33.844054",
+   "revision": "bd2a521226f02d83db8b92baa1f4e55afe5ef2d2",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "wizard",
+   "origin": "derived"
+  },
+  {
+   "model": "cris177/Orca-Hermes-7B-slerp",
+   "run": "2024-01-24T04-05-19.202804",
+   "revision": "6c75abc7477ef1d7832cc356e9de41d09a8b153f",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "orca",
+   "origin": "derived"
+  },
+  {
+   "model": "Isotonic/Hermes-2-Pro-Mixtral-4x7B",
+   "run": "2024-03-22T02-39-47.890512",
+   "revision": "695de63727c5e756695d006f261d595e22644f75",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "hermes",
+   "origin": "derived"
+  },
+  {
+   "model": "microsoft/Phi-3-mini-128k-instruct",
+   "run": "2024-04-25T11-04-08.300273",
+   "revision": "571ff2fd95c12e9a9ed6e3e3151143455282b62f",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "phi",
+   "origin": "derived"
+  },
+  {
+   "model": "VAGOsolutions/SauerkrautLM-Gemma-7b",
+   "run": "2024-03-01T01-45-17.158397",
+   "revision": "aadb41de27579009563ca982c33e7946671b38b6",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "gemma",
+   "origin": "derived"
+  },
+  {
+   "model": "FelixChao/NarutoDolphin-7B",
+   "run": "2024-01-14T10-24-57.162360",
+   "revision": "1463f11dd6850215f1515ca927d4dd05612a18c8",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "dolphin",
+   "origin": "derived"
+  },
+  {
+   "model": "allenai/tulu-2-dpo-70b",
+   "run": "2024-02-02T06-48-43.589029",
+   "revision": "a660da138ec1f622462e0d636f8f5cb497c43603",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "tulu",
+   "origin": "derived"
+  },
+  {
+   "model": "deepseek-ai/deepseek-llm-67b-chat",
+   "run": "2024-01-20T05-32-04.370506",
+   "revision": "cdf75c523903a6429506c1adbabb28175979f112",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "deepseek",
+   "origin": "derived"
+  },
+  {
+   "model": "Langboat/Mengzi3-13B-Base",
+   "run": "2024-05-06T05-43-32.846010",
+   "revision": "9caf4a9d04134b52d8ce79fac0cafb6e1dd19cc1",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "other",
+   "origin": "base"
+  },
+  {
+   "model": "umd-zhou-lab/recycled-alpaca-7b-v2.0",
+   "run": "2024-01-10T17-08-53.842627",
+   "revision": "4192c27d99274e86976c7789a6225767b0691fae",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "alpaca",
+   "origin": "derived"
+  },
+  {
+   "model": "Charlie911/vicuna-7b-v1.5-lora-temporal-without-mctaco-1",
+   "run": "2024-01-24T22-38-44.232137",
+   "revision": "4c3ff968924ca09792a4a1d29f14ee402f072da6",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "vicuna",
+   "origin": "derived"
+  },
+  {
+   "model": "codellama/CodeLlama-70b-Python-hf",
+   "run": "2024-02-02T06-17-38.337900",
+   "revision": "37bfcbe0cfaa42065f9f9493a8c53499c866b194",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "llama",
+   "origin": "base"
+  },
+  {
+   "model": "stabilityai/stablelm-2-zephyr-1_6b",
+   "run": "2024-03-01T08-52-40.899023",
+   "revision": "423ab5e8c7ed31d4593eda9ae26d1995366b7328",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "stablelm",
+   "origin": "derived"
+  },
+  {
+   "model": "mayacinka/NeuralZephyr-Beagle-7B",
+   "run": "2024-02-17T00-55-18.728023",
+   "revision": "15ce75e7a29f1ced3816d1349b09cf9e3a9c6928",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "zephyr",
+   "origin": "derived"
+  },
+  {
+   "model": "CallComply/openchat-3.5-0106-128k",
+   "run": "2024-01-14T19-33-38.391321",
+   "revision": "88d78dd044a265dd77130111289fb5555cc6f084",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "openchat",
+   "origin": "derived"
+  },
+  {
+   "model": "nlpguy/Starling-low-tune",
+   "run": "2024-05-10T13-14-16.750065",
+   "revision": "34565f684f464e9de7af414f6d2dc03580cf30f6",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "starling",
+   "origin": "derived"
+  },
+  {
+   "model": "cloudyu/Mixtral_11Bx2_MoE_19B",
+   "run": "2024-01-04T13-40-23.223799",
+   "revision": "3342e80506d2eb8cd327afb88c8affcf42e9ef62",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mixtral",
+   "origin": "base"
+  },
+  {
+   "model": "Qwen/Qwen1.5-0.5B",
+   "run": "2024-02-18T05-36-23.375709",
+   "revision": "90ec1aa0614bd9b2bce7168d3e68018ca6659fd7",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "qwen",
+   "origin": "base"
+  },
+  {
+   "model": "liminerity/Blurstral-7b-slerp",
+   "run": "2024-01-18T12-26-10.788349",
+   "revision": "2f9385f72e86d997443040f29f0005d328e947e4",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mistral",
+   "origin": "base"
+  },
+  {
+   "model": "YeungNLP/firefly-qwen1.5-en-14b-dpo-v0.1",
+   "run": "2024-04-26T06-09-33.880781",
+   "revision": "17023b98002e1b798e7a509149046b13653eb6a9",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "qwen",
+   "origin": "derived"
+  },
+  {
+   "model": "SC56/Mistral-7B-orca-dpo-4h",
+   "run": "2024-01-28T01-45-53.356534",
+   "revision": "8a8678a8dc398cb7f9ca255b630784ef285606fd",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mistral",
+   "origin": "derived"
+  },
+  {
+   "model": "cloudyu/Mixtral_7Bx2_MoE",
+   "run": "2023-12-30T02-50-07.869164",
+   "revision": "014a560cfe56cb7e9b420fdfc1be145704e029b0",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mixtral",
+   "origin": "derived"
+  },
+  {
+   "model": "cloudyu/Yi-34Bx2-MoE-60B-DPO",
+   "run": "2024-01-23T09-26-46.662482",
+   "revision": "e8b0102d81beb4d7a93f0883c19609e6a4adb08c",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "yi",
+   "origin": "derived"
+  },
+  {
+   "model": "Kquant03/BurningBruce-SOLAR-8x10.7B-bf16",
+   "run": "2024-01-21T07-45-02.704835",
+   "revision": "8b03f074466e085b51a0d7b52127b53fb510b2ae",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "solar",
+   "origin": "derived"
+  },
+  {
+   "model": "ajibawa-2023/SlimOrca-Llama-3-8B",
+   "run": "2024-05-27T07-19-00.717562",
+   "revision": "012889bb1d86cc8a3bcdf5afa3b293fe694adace",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "orca",
+   "origin": "derived"
+  },
+  {
+   "model": "bartowski/internlm2-chat-20b-llama-old",
+   "run": "2024-04-23T10-09-39.561585",
+   "revision": "8256f6345a710833db0abbe90d027673c7bdcdc2",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "internlm",
+   "origin": "derived"
+  },
+  {
+   "model": "pansophic/gemma-2b-sft-preview",
+   "run": "2024-04-09T23-16-38.946597",
+   "revision": "157dab286ca1045375f3aab3e34124a05ff24f51",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "phi",
+   "origin": "derived"
+  },
+  {
+   "model": "azarafrooz/gemma-nlaf-v1",
+   "run": "2024-04-30T19-49-43.445267",
+   "revision": "8e2da2b8230d1b8b2b290bb85e94f08e529f2c8a",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "gemma",
+   "origin": "derived"
+  },
+  {
+   "model": "cognitivecomputations/dolphin-2.9.1-mixtral-1x22b",
+   "run": "2024-05-30T17-25-27.588016",
+   "revision": "27b5116220129e65edff9157284d35ef38e81f7b",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "dolphin",
+   "origin": "derived"
+  },
+  {
+   "model": "louisbrulenaudet/Maxine-34B-stock",
+   "run": "2024-04-05T00-59-27.637181",
+   "revision": "73026bd826015b97f17f67b742f0c1b39854606e",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "smaug",
+   "origin": "derived"
+  },
+  {
+   "model": "NousResearch/Nous-Hermes-2-SOLAR-10.7B",
+   "run": "2024-01-04T13-44-46.879799",
+   "revision": "5a6dabaeced23d47866541fc881b1807700f18ec",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "hermes",
+   "origin": "derived"
+  },
+  {
+   "model": "IDEA-CCNL/Ziya2-13B-Base",
+   "run": "2024-03-29T21-47-57.407157",
+   "revision": "84e53b3e486f584953869357097be8a2da8f8e66",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "other",
+   "origin": "base"
+  },
+  {
+   "model": "axxd/wizardllama-7b",
+   "run": "2024-03-23T10-18-04.017595",
+   "revision": "cde086651ae45825297bee0923ee4fc126be58fc",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "wizard",
+   "origin": "derived"
+  },
+  {
+   "model": "cognitivecomputations/yayi2-30b-llama",
+   "run": "2024-01-10T16-19-39.763701",
+   "revision": "68b25787c382331bbd210c46bdd94e924e397f3b",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "llama",
+   "origin": "base"
+  },
+  {
+   "model": "arvindanand/Deepseek-Wizard-33B-slerp",
+   "run": "2024-04-10T11-55-40.376566",
+   "revision": "bbabffc680bc8d600bd08ee39f93f10b99239517",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "deepseek",
+   "origin": "derived"
+  },
+  {
+   "model": "stabilityai/stablelm-zephyr-3b",
+   "run": "2024-03-01T08-48-53.785149",
+   "revision": "49bee91b886e9f306c3c7f8d530fc16b890c99e4",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "stablelm",
+   "origin": "derived"
+  },
+  {
+   "model": "perlthoughts/openchat-3.5-1210-32k-8x7b-MoE",
+   "run": "2024-01-05T03-11-16.908454",
+   "revision": "829bb930214caf3316e93347edca7645bc75eee4",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "openchat",
+   "origin": "derived"
+  },
+  {
+   "model": "Undi95/Miqu-70B-Alpaca-DPO",
+   "run": "2024-02-10T01-04-42.013037",
+   "revision": "1924867c02004b39717d54e05b56bfde1efb5fca",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "alpaca",
+   "origin": "derived"
+  },
+  {
+   "model": "allknowingroger/StarlingMaxLimmy-7B-slerp",
+   "run": "2024-04-08T11-07-30.615116",
+   "revision": "44d680c1b23b5e29b4a6365effd7d1a2f65e9cba",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "starling",
+   "origin": "derived"
+  },
+  {
+   "model": "luffycodes/vicuna-class-tutor-13b-ep3",
+   "run": "2023-12-23T17-04-28.342677",
+   "revision": "93c41a9767344c1513e7bc1feb198f58f98ee77e",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "vicuna",
+   "origin": "derived"
+  },
+  {
+   "model": "YeungNLP/firefly-zephyr-6x7b",
+   "run": "2023-12-29T17-33-28.053405",
+   "revision": "f07f5e8399a32c01f6b4c110977f93a5f63fe9ea",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "zephyr",
+   "origin": "derived"
+  },
+  {
+   "model": "chatty123/mistral_rank8_sft",
+   "run": "2024-04-15T17-05-08.737295",
+   "revision": "b2caf078bf58b11b9511558e0923a8e61375c639",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mistral",
+   "origin": "derived"
+  },
+  {
+   "model": "LeroyDyer/Mixtral_AI_Cyber_3.m1",
+   "run": "2024-03-30T19-36-53.650075",
+   "revision": "a10317e288d0dbc8735fc1fe6f279341bd604103",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "mixtral",
+   "origin": "derived"
+  },
+  {
+   "model": "freewheelin/free-evo-qwen72b-v0.8",
+   "run": "2024-05-04T07-20-13.029385",
+   "revision": "c50321be48a01c7e25be918e18faddfd0d2f8345",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "qwen",
+   "origin": "derived"
+  },
+  {
+   "model": "qnguyen3/Master-Yi-9B",
+   "run": "2024-05-25T11-11-13.183740",
+   "revision": "19be30c8b0150d9af8cf9c89751604cf7659d2c2",
+   "lighteval_sha": "494ee12240e716e804ae9ea834f84a2c864c07ca",
+   "family": "yi",
+   "origin": "derived"
+  }
+ ],
+ "packages": {
+  "numpy": "2.5.4",
+  "pandas": "3.1.0",
+  "pyarrow": "26.0.1",
+  "scipy": "1.18.1",
+  "huggingface_hub": "2.4.0"
+ },
+ "python": "3.14.6",
+ "checksums": {
+  "probs_values": "075d09c88c550a83c8b82b93f81714d62fe6b36c9ad8be36db10918790aa065f",
+  "probs_shape": [
+   150,
+   14042,
+   4
+  ],
+  "model_order": "7fd80686cf1bb702a2199d3b503eef364834baf74d011a04e2fcced5be3bc539",
+  "questions_table": "ed463b80da6156b7fda6dfb263ab83c0754e7393172ac77c5ff15d6575f8b1ed",
+  "scores_table": "bd5b2bf711228b4d335ca7634c8c7115e03631b45041a1f43bc4758eb38e1267"
+ }
+}

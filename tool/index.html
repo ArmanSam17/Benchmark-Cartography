@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benchmark Cartography</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Benchmark Cartography</h1>
+    <p class="sub">MMLU, 14,042 questions, read through <span id="n-models">150</span> public models. Brush the map to select questions, click a point to inspect it, and see what the selection does to the leaderboard.</p>
+  </div>
+  <div id="status" class="status">Loading data…</div>
+</header>
+
+<section class="controls" aria-label="Map controls">
+  <label>Models <select id="subset"></select></label>
+  <span class="sep"></span>
+  <label>X <select id="x-field"></select></label>
+  <label>Y <select id="y-field"></select></label>
+  <label>Color <select id="color-field">
+    <option value="redux">MMLU-Redux label</option>
+    <option value="consensus_share">Top-tier share on consensus alternative</option>
+    <option value="top_vote_entropy">Top-tier vote entropy</option>
+  </select></label>
+  <label>Subject <select id="subject"><option value="-1">All 57 subjects</option></select></label>
+  <span class="sep"></span>
+  <span class="group-label">Select</span>
+  <button data-preset="wrong">Redux: wrong key</button>
+  <button data-preset="anyerr">Redux: any error</button>
+  <span class="preset-flag">
+    <button data-preset="flag">Top-tier conf. &lt;</button>
+    <input id="flag-threshold" type="number" min="0" max="1" step="0.05" value="0.2" aria-label="Top-tier confidence threshold">
+  </span>
+  <button data-preset="clear" class="ghost">Clear</button>
+</section>
+
+<main class="grid">
+  <section class="panel map-panel">
+    <div class="panel-head">
+      <h2>Data map</h2>
+      <div id="legend" class="legend"></div>
+    </div>
+    <div id="map" class="map"></div>
+    <div id="selection-summary" class="selection-summary"></div>
+    <details class="detect-wrap"><summary>Detection scores for this model set</summary><div id="detect" class="detect"></div></details>
+    <div class="table-wrap">
+      <table id="selection-table">
+        <thead><tr><th>Question</th><th>Redux</th><th class="num">Top-tier conf.</th><th class="num">Consensus share</th><th class="num">IRT a</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel inspector-panel">
+    <div class="panel-head"><h2>Question inspector</h2></div>
+    <div id="inspector" class="inspector"><p class="empty">Click a point on the map or a row in the table.</p></div>
+  </section>
+
+  <section class="panel leaderboard-panel">
+    <div class="panel-head">
+      <h2>Leaderboard consequence</h2>
+      <div class="lb-controls">
+        <div class="seg" role="radiogroup" aria-label="Action on selected questions">
+          <button data-mode="remove" class="on">Remove</button>
+          <button data-mode="consensus">Re-key to consensus</button>
+          <button data-mode="redux">Re-key to Redux fix</button>
+        </div>
+      </div>
+    </div>
+    <div id="lb-stats" class="stats"></div>
+    <div class="lb-body">
+      <div id="slope" class="slope"></div>
+      <div class="lb-side">
+        <h3>Against difficulty-matched random <span id="lb-action-word">removals</span></h3>
+        <p class="note" id="baseline-note"></p>
+        <div id="baseline"></div>
+        <h3>Largest moves</h3>
+        <table id="movers"><thead><tr><th>Model</th><th class="num">Rank</th><th class="num">Δ</th><th class="num">Acc.</th></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="tooltip" class="tooltip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

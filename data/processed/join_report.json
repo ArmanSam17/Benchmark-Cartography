@@ -1,0 +1,16 @@
+{
+  "n_models": 150,
+  "n_questions": 14042,
+  "n_redux": 5700,
+  "redux_matched": 5699,
+  "redux_match_rate": 0.9998,
+  "by_tier": {
+    "exact_with_options": 5690,
+    "fuzzy": 8,
+    "exact_question": 1
+  },
+  "official_key_agrees_with_redux": 1.0,
+  "unparsed_queries": 0,
+  "key_vs_recorded_acc_conflicts": 0,
+  "key_check_cells": 2106300
+}

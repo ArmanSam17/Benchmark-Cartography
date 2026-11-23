@@ -1,0 +1,13 @@
+{
+  "note": "Fixed triage set for the expert sessions, in presentation order. The answer key is in study/facilitator_key.md; do not show it to participants.",
+  "qids": [
+    "miscellaneous/136",
+    "virology/93",
+    "high_school_physics/83",
+    "machine_learning/27",
+    "miscellaneous/468",
+    "high_school_mathematics/136",
+    "abstract_algebra/59",
+    "high_school_psychology/53"
+  ]
+}
