@@ -1,5 +1,9 @@
 # Publishes the D3 tool (the tool/ folder only) to GitHub Pages on every push to main.
 # One-time setup by the repo owner: Settings → Pages → Build and deployment → Source: "GitHub Actions".
+#
+# Upload and deploy are separate jobs on purpose: when deploy-pages runs in the same job right
+# after upload-pages-artifact, it can look the artifact up before GitHub has registered it and
+# fail with 'No artifacts named "github-pages"' (actions/deploy-pages#451).
 name: Deploy tool to GitHub Pages
 
 on:
@@ -15,14 +19,11 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - name: Check the exported data is present
@@ -34,5 +35,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: tool
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4
