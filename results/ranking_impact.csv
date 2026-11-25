@@ -1,0 +1,4 @@
+action,questions,pair swaps,kendall tau,matched random: mean swaps,p (matched),plain random: mean swaps
+Remove Redux-flawed questions,370,42,0.9925,29.1,0.024,26.3
+Remove our top 370 flags,370,21,0.9962,35.3,0.999,26.3
+Correct 101 Redux wrong keys,101,44,0.9921,,,

@@ -4,3 +4,8 @@ __pycache__/
 *.pyc
 .DS_Store
 study/facilitator_key.md
+report/*.aux
+report/*.log
+report/*.out
+report/*.fls
+report/*.fdb_latexmk

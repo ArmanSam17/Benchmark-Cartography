@@ -1,0 +1,238 @@
+{
+  "rq1": {
+    "bad_options_clarity": {
+      "n": 25,
+      "median_top_confidence": 0.667,
+      "median_confidence": 0.515,
+      "median_variability": 0.256,
+      "share_top_conf_below_0.2": 0.12,
+      "auroc_vs_ok_low_top_conf": 0.582
+    },
+    "bad_question_clarity": {
+      "n": 132,
+      "median_top_confidence": 0.488,
+      "median_confidence": 0.364,
+      "median_variability": 0.235,
+      "share_top_conf_below_0.2": 0.174,
+      "auroc_vs_ok_low_top_conf": 0.675
+    },
+    "expert": {
+      "n": 32,
+      "median_top_confidence": 0.47,
+      "median_confidence": 0.405,
+      "median_variability": 0.239,
+      "share_top_conf_below_0.2": 0.156,
+      "auroc_vs_ok_low_top_conf": 0.663
+    },
+    "multiple_correct_answers": {
+      "n": 39,
+      "median_top_confidence": 0.611,
+      "median_confidence": 0.453,
+      "median_variability": 0.261,
+      "share_top_conf_below_0.2": 0.128,
+      "auroc_vs_ok_low_top_conf": 0.668
+    },
+    "no_correct_answer": {
+      "n": 36,
+      "median_top_confidence": 0.47,
+      "median_confidence": 0.368,
+      "median_variability": 0.231,
+      "share_top_conf_below_0.2": 0.222,
+      "auroc_vs_ok_low_top_conf": 0.722
+    },
+    "ok": {
+      "n": 5329,
+      "median_top_confidence": 0.821,
+      "median_confidence": 0.602,
+      "median_variability": 0.256,
+      "share_top_conf_below_0.2": 0.061
+    },
+    "wrong_groundtruth": {
+      "n": 106,
+      "median_top_confidence": 0.115,
+      "median_confidence": 0.164,
+      "median_variability": 0.144,
+      "share_top_conf_below_0.2": 0.651,
+      "auroc_vs_ok_low_top_conf": 0.906
+    }
+  },
+  "rq2_auprc_per_type": {
+    "wrong_groundtruth": {
+      "n": 106,
+      "base_rate": 0.0186,
+      "Low top-tier confidence": 0.355,
+      "Low confidence": 0.29,
+      "Negative ability alignment": 0.263,
+      "Low accuracy (majority vote)": 0.176,
+      "High 2PL difficulty": 0.211,
+      "Low 2PL discrimination": 0.192
+    },
+    "bad_question_clarity": {
+      "n": 132,
+      "base_rate": 0.0232,
+      "Low top-tier confidence": 0.042,
+      "Low confidence": 0.04,
+      "Negative ability alignment": 0.04,
+      "Low accuracy (majority vote)": 0.037,
+      "High 2PL difficulty": 0.038,
+      "Low 2PL discrimination": 0.039
+    },
+    "multiple_correct_answers": {
+      "n": 39,
+      "base_rate": 0.0068,
+      "Low top-tier confidence": 0.011,
+      "Low confidence": 0.012,
+      "Negative ability alignment": 0.011,
+      "Low accuracy (majority vote)": 0.01,
+      "High 2PL difficulty": 0.01,
+      "Low 2PL discrimination": 0.012
+    },
+    "no_correct_answer": {
+      "n": 36,
+      "base_rate": 0.0063,
+      "Low top-tier confidence": 0.013,
+      "Low confidence": 0.01,
+      "Negative ability alignment": 0.015,
+      "Low accuracy (majority vote)": 0.009,
+      "High 2PL difficulty": 0.01,
+      "Low 2PL discrimination": 0.026
+    },
+    "bad_options_clarity": {
+      "n": 25,
+      "base_rate": 0.0044,
+      "Low top-tier confidence": 0.009,
+      "Low confidence": 0.007,
+      "Negative ability alignment": 0.006,
+      "Low accuracy (majority vote)": 0.007,
+      "High 2PL difficulty": 0.008,
+      "Low 2PL discrimination": 0.006
+    },
+    "expert": {
+      "n": 32,
+      "base_rate": 0.0056,
+      "Low top-tier confidence": 0.011,
+      "Low confidence": 0.01,
+      "Negative ability alignment": 0.009,
+      "Low accuracy (majority vote)": 0.011,
+      "High 2PL difficulty": 0.01,
+      "Low 2PL discrimination": 0.009
+    },
+    "any_error": {
+      "n": 370,
+      "base_rate": 0.0649,
+      "Low top-tier confidence": 0.252,
+      "Low confidence": 0.224,
+      "Negative ability alignment": 0.213,
+      "Low accuracy (majority vote)": 0.176,
+      "High 2PL difficulty": 0.193,
+      "Low 2PL discrimination": 0.192
+    }
+  },
+  "rq2_precision_at_k_wrong_key": {
+    "25": 0.76,
+    "50": 0.56,
+    "100": 0.41,
+    "200": 0.265
+  },
+  "rq2_recall_at_k_wrong_key": {
+    "100": 0.387,
+    "200": 0.5,
+    "500": 0.67
+  },
+  "rq2_top_conf_wrong_key_ci95": [
+    0.26,
+    0.469
+  ],
+  "corr_spearman": {
+    "top_confidence~irt_d": -0.921,
+    "confidence~irt_d": -0.985,
+    "ability_alignment~irt_a": 0.943,
+    "top_confidence~irt_a": 0.824
+  },
+  "rq2_cv_logistic_auprc": {
+    "2PL only": {
+      "wrong key": 0.196,
+      "any error": 0.198
+    },
+    "ours only": {
+      "wrong key": 0.248,
+      "any error": 0.197
+    },
+    "2PL + ours": {
+      "wrong key": 0.275,
+      "any error": 0.195
+    }
+  },
+  "wrong_vs_ambiguous": {
+    "n_wrong": 80,
+    "n_ambiguous": 54,
+    "auroc_consensus_share": 0.664,
+    "auroc_low_top_entropy": 0.679,
+    "auroc_low_2pl_discrimination": 0.631,
+    "auroc_high_2pl_difficulty": 0.687,
+    "median_consensus_share_wrong": 0.867,
+    "median_consensus_share_ambiguous": 0.617
+  },
+  "consensus_matches_fix": {
+    "n_with_fix": 101,
+    "all": 0.782,
+    "share>=0.5_n": 71,
+    "share>=0.5": 0.873
+  },
+  "rq3": {
+    "remove 106 wrong keys": {
+      "questions": 106,
+      "pair_swaps": 28,
+      "kendall_tau": 0.995,
+      "models_moved": 39,
+      "max_move": 3,
+      "new_in_top10": 0,
+      "matched_median": 14.0,
+      "matched_p": 0.001,
+      "unmatched_median": 14.0,
+      "unmatched_p": 0.003
+    },
+    "remove 370 Redux-flagged": {
+      "questions": 370,
+      "pair_swaps": 42,
+      "kendall_tau": 0.9925,
+      "models_moved": 56,
+      "max_move": 3,
+      "new_in_top10": 0,
+      "matched_median": 28.0,
+      "matched_p": 0.018,
+      "unmatched_median": 25.0,
+      "unmatched_p": 0.002
+    },
+    "re-key 106 wrong keys to consensus": {
+      "questions": 106,
+      "pair_swaps": 50,
+      "kendall_tau": 0.9911,
+      "models_moved": 57,
+      "max_move": 5,
+      "new_in_top10": 0,
+      "matched_median": 28.0,
+      "matched_p": 0.001,
+      "unmatched_median": 25.0,
+      "unmatched_p": 0.001
+    },
+    "re-key to Redux fix": {
+      "questions": 100,
+      "pair_swaps": 44,
+      "kendall_tau": 0.9921,
+      "models_moved": 56,
+      "max_move": 5
+    }
+  },
+  "rq3_draws": 1000,
+  "accuracy_range": [
+    0.306,
+    0.802
+  ],
+  "median_gap_adjacent_models": 0.00159,
+  "candidates_outside_redux": {
+    "unchecked": 8343,
+    "flagged_strict": 289,
+    "flagged_top_conf<0.2": 630
+  }
+}
