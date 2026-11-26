@@ -46,8 +46,9 @@ reaches 0.211), and the top models' preferred alternative matches the human corr
 cases where they agree. Removing the 106 known wrong keys swaps 28 of 11,175 model pairs, twice
 what difficulty-matched random removals produce ($p=0.001$), yet no model enters or leaves the top
 10. We built an interactive D3 tool that links a data map, a question inspector and a leaderboard
-view, so an analyst can go from a suspicious region to a single question to its effect on rankings,
-and evaluated it in think-aloud sessions with \fillin{n} LLM-evaluation practitioners.
+view, so an analyst can go from a suspicious region to a single question to its effect on rankings.
+Three usage scenarios show the tool separating wrong keys from hard questions that IRT scores alike,
+finding likely errors MMLU-Redux did not check, and a case where model consensus is itself wrong.
 Tool: \url{https://armansam17.github.io/Benchmark-Cartography/}.
 \end{abstract}
 
@@ -77,16 +78,17 @@ the models are wrong, and see how much those questions change the leaderboard?
     majority vote, low accuracy, 2PL IRT and random?
   \item \textbf{RQ3 (consequence).} Does removing or re-keying flawed questions reorder the
     leaderboard more than removing random questions of the same difficulty?
-  \item \textbf{RQ4 (use).} What do LLM-evaluation experts discover with the tool, and how do they
-    use its views to judge whether a flagged question is broken and whether it matters?
+  \item \textbf{RQ4 (use).} How do the linked views help an analyst find suspicious questions, judge
+    whether the key is wrong or the question is just hard, and decide whether it matters, and where
+    can the evidence mislead?
 \end{itemize}
 
 \textbf{Contributions.} (1) Cartography for an evaluation benchmark, with models in place of epochs
 and a top-tier view that separates ``hard for most models'' from ``rejected by the strongest
 models''. (2) Validation against human-verified errors, per error type, against an IRT baseline.
 (3) An interactive tool that, to our knowledge, is the first to link question-level evidence to
-leaderboard rankings against a difficulty-matched baseline. (4) A qualitative expert study of how
-practitioners use that evidence.
+leaderboard rankings against a difficulty-matched baseline. (4) Usage scenarios showing what that evidence
+adds beyond an IRT table, including where it misleads.
 
 \section{Related Work}
 
@@ -197,8 +199,9 @@ stratified by family (75 each), or all models except the two whose names mention
 whether a flag depends on a particular group of models, a risk since many fine-tunes share a base.
 
 \textbf{Study mode.} Adding \texttt{?study} to the URL hides every MMLU-Redux label, color, preset and
-correction, so experts judge questions from model evidence alone, and adds a button that selects the
-fixed study set (Section~\ref{sec:study}).
+correction, so a participant judges questions from model evidence alone, and adds a button that
+selects a fixed set of 8 triage questions. It was built for an expert study we prepared but could not
+run in time (Section~\ref{sec:study}).
 
 \textbf{Implementation.} A Python pipeline writes three static files (question scores as columnar
 JSON, model metadata, and an 8-bit matrix of votes and $p_m(q)$ for all model--question pairs, 4\,MB).
@@ -368,35 +371,75 @@ Alley, who played the role. \emph{high\_school\_psychology/53} asks which is \em
 expression; the key says surprise, which is one of the basic expressions, and 97\% of the top tier
 choose love. \fillin{optional: hand-check the top 20 candidates and report how many are wrong keys.}
 
-\section{Expert Study (RQ4)}
+\section{Usage Scenarios (RQ4)}
 \label{sec:study}
 
-Following the proposal feedback, this is a formative, qualitative study: no control condition, no
-timing and no statistical claims.
+We planned a think-aloud study with LLM-evaluation practitioners (protocol, study set and a
+label-free study mode are in \texttt{study/}), but could not recruit participants within the project
+window. Instead we evaluate the tool with three usage scenarios, a common method for visualization
+systems: each follows one analyst task from Section~4 on real MMLU questions, in the deployed tool,
+and every number can be reproduced there. The scenarios show what the linked views make possible;
+they do not measure how well other people use them (Section~7).
 
-\textbf{Participants.} \fillin{n} people who work on LLM evaluation, NLP benchmarks or data quality
-\fillin{roles and years of experience, e.g. ``3 PhD students, 1 research engineer''}. We recorded
-role and experience only.
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=\textwidth]{fig_scenarios.pdf}
+  \caption{The inspector's strip plot for four low-accuracy questions: each model's probability on
+  the official key against its macro accuracy, with the top 30 models in orange. A healthy hard
+  question (left) rises with model strength. The other three all have negative 2PL discrimination and
+  difficulty in the top 5\% of MMLU, so an IRT table ranks them alike, but their vote patterns
+  differ: unanimous rejection (virology/93, a wrong key), a strong but split consensus that is itself
+  wrong (physics/83), and a near-even split between two alternatives (miscellaneous/136, a hard
+  question with a correct key).}
+  \label{fig:scenarios}
+\end{figure}
 
-\textbf{Procedure.} Each 30--45 minute session over video call used the tool in study mode, with no
-MMLU-Redux labels visible. One of us facilitated from a fixed script and the other took notes. After a
-scripted 5-minute tour, participants (1) triaged a fixed set of 8 questions, saying for each whether
-the key is wrong, the question is ambiguous, or it is hard and the key is right, with confidence 1--5
-and the evidence that convinced them; (2) used the leaderboard view to decide whether the questions they
-judged broken would change how they report MMLU, including re-keying and switching model subsets;
-and (3) answered debrief questions. The 8 questions all have low top-tier confidence, so the scores
-alone cannot separate them: 4 wrong keys (2 from MMLU-Redux, 2 candidates outside it), 1 ambiguous,
-and 3 hard questions whose key is correct, including one where 77\% of the top tier agree on a wrong
-alternative. Both of us coded the notes independently and merged the codes.
+\textbf{Scenario 1: finding errors nobody has checked (T1 $\rightarrow$ T2).} An analyst colors the
+map by MMLU-Redux label and sees the orange wrong keys gather in the low-confidence,
+low-variability corner. They switch the y-axis to top-tier confidence, color by consensus share,
+and brush the same corner among the gray, unchecked questions: 630 unchecked questions have
+top-tier confidence below 0.2, and 289 of them have at least 80\% of the top tier agreeing on one
+alternative. Sorting the selection by consensus share and clicking through, they find
+\emph{miscellaneous/468}: the key names Helen Hunt as the Vulcan in \emph{Star Trek II}, while 79\%
+of all models and 83\% of the top tier choose Kirstie Alley, and P(key) falls as models get stronger
+($r=-0.48$). The next, \emph{high\_school\_psychology/53}, keys ``surprise'' as \emph{not} a primary
+facial expression; 97\% of the top tier choose ``love''. In a few minutes the map has led from a
+region to two likely new wrong keys (Section~5.5), each with a proposed correction.
 
-\textbf{Results.} \fillin{Verdict table: per question, participants' verdicts vs. the reference.}
+\textbf{Scenario 2: wrong key or just hard? (T2).} The analyst then asks whether low confidence means
+the key is wrong. Figure~\ref{fig:scenarios} shows three questions they inspect. By 2PL IRT they look
+the same: negative discrimination ($a$ from $-2.44$ to $-0.37$) and difficulty in the top 5\% of MMLU.
+The inspector separates two of them at a glance. On \emph{virology/93} all 30 top models choose the
+same alternative (filamentous, which MMLU-Redux confirms) and no top model puts more than 0.27 on
+the key: a wrong key. On \emph{miscellaneous/136} (if Christmas is a Saturday, what day is New Year's
+Day?) the top tier splits 47\% to 43\% between two wrong answers. Models that agree on no
+alternative are failing a hard question, and reading it confirms the key (Saturday) is right. The
+third, \emph{high\_school\_physics/83}, is the trap we put in the study set on purpose: 77\% of the
+top tier agree that a concave mirror's image moves \emph{toward} the mirror as the object nears the
+focal point, but the key (away from the mirror, and taller) is correct. The views show warning signs
+(the consensus is not unanimous, all models split 50\% to 34\% between two alternatives, and some top
+models still put up to 0.51 on the key), yet only domain knowledge settles it. This matches RQ2:
+consensus share separates wrong keys from ambiguous questions only moderately (AUROC 0.66), which is
+why the tool shows evidence and leaves the verdict to a person.
 
-\fillin{3--4 themes, each with 1--2 short quotes. Candidates to look for: which evidence was decisive
-(top-tier bars vs. all-model bars vs. the strip plot vs. scores); over-trust of model consensus on the
-hard-but-correct questions; how participants read the matched baseline and p-value; whether the subset
-toggle changed their conclusions; what they would add.}
+\textbf{Scenario 3: does it matter? (T3).} The analyst selects the 106 MMLU-Redux wrong keys and
+removes them in the leaderboard view. 28 model pairs swap, against a median of 14 for random
+questions of the same difficulty ($p=0.001$), so the effect is not chance. The slope chart shows
+where it happens: 39 models move, none by more than 3 places, all outside the top 10. Re-keying to
+the consensus answer instead of removing swaps 50 pairs. Switching the model menu to base models only
+or one model per family drops the swaps to 5 and 0. The conclusion, reached in one view: MMLU's known
+wrong keys do not change which models lead, but they can flip comparisons between near-identical
+fine-tunes of the same base, so a claim like ``our fine-tune beats its base by 0.2 points'' should
+be checked on the corrected keys.
 
-\fillin{Usability problems found, and which we fixed.}
+\textbf{What the scenarios show beyond an IRT table.} A table sorted by 2PL difficulty or top-tier
+confidence would surface the same questions. What it does not show is the \emph{shape} of the
+disagreement (unanimous vs.\ split, top tier vs.\ all models, rising vs.\ flat with model strength),
+the answer the models propose instead, or the consequence for the ranking against a matched baseline.
+Each scenario needed at least one of these to reach its conclusion.
+
+\fillin{Optional: if any practitioner feedback arrives (async form), add one short paragraph with
+1--2 quotes here; otherwise delete this line.}
 
 \section{Discussion and Limitations}
 
@@ -408,13 +451,17 @@ a verdict.
 \textbf{What the map is for.} A sorted table of top-tier confidence would find the same wrong keys.
 The map's role is overview and triage: it shows that wrong keys sit in one corner while other errors
 do not, lets an analyst brush a region rather than pick a threshold, and connects to the inspector and
-the leaderboard view, which a table does not. \fillin{Add what participants said about map vs. table.}
+the leaderboard view, which a table does not. Scenario~2 is the concrete case: three questions that
+an IRT table ranks side by side turn out to be a wrong key, a hard question and a trap once their
+vote patterns are visible.
 
 \textbf{Limitations.} One benchmark and one harness version; 5-shot log-likelihood scoring rather than
 generation; 150 models from one leaderboard, which over-represents 7B fine-tunes of a few bases; ground
-truth from one re-annotation effort, which itself has disagreements; only wrong keys are detectable,
-not ambiguous questions; and a small expert study with colleagues rather than a sample of
-practitioners. The tool's numbers use 8-bit probabilities and 200 random draws, while the tables use
+truth from one re-annotation effort, which itself has disagreements; and only wrong keys are detectable,
+not ambiguous questions. Most importantly, we ran no user study: the usage scenarios are performed
+by the authors, who designed the tool and know the reference labels, so they show what the tool
+makes possible, not how well others use it. Running the prepared think-aloud protocol with
+practitioners is the main next step. The tool's numbers use 8-bit probabilities and 200 random draws, while the tables use
 the full-precision data and 1,000.
 
 \section{Conclusion}
@@ -424,12 +471,13 @@ data. Low confidence among the strongest models finds MMLU's wrong keys far bett
 better than 2PL IRT, and their consensus usually names the right answer. Fixing the known wrong keys
 reorders the leaderboard more than chance, but only among closely matched models, not at the top.
 Linking these findings in one interactive tool lets an analyst move from a suspicious region, to the
-evidence for one question, to its consequence for the ranking, and \fillin{one sentence on what the
-expert study showed}.
+evidence for one question, to its consequence for the ranking. Our usage scenarios show that seeing the shape of the
+disagreement separates wrong keys from hard questions that 2PL IRT scores alike, though not always:
+a strong consensus can still be wrong, so the tool leaves the verdict to a person.
 
 \textbf{Team contributions.} Padmapriya Venkatesh built the data pipeline, scores and 2PL fit (Stage 1)
 and the D3 tool (Stage 3). Arman Samayam led the detection and ranking analyses (Stage 2). Both
-designed and ran the expert study and wrote the report.
+designed the expert-study protocol, wrote the usage scenarios and wrote the report.
 
 \textbf{Reproducibility.} Code, cached data with checksums, and all scripts are at
 \url{https://github.com/ArmanSam17/Benchmark-Cartography}. \texttt{analysis/01\_detection.py} and

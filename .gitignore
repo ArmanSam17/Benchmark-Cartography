@@ -9,3 +9,8 @@ report/*.log
 report/*.out
 report/*.fls
 report/*.fdb_latexmk
+docs/*.aux
+docs/*.log
+docs/*.out
+docs/*.fls
+docs/*.fdb_latexmk
