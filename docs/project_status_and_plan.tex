@@ -27,7 +27,7 @@
 \title{\textbf{Benchmark Cartography}\\[2pt]
 \large The whole project explained: what it is, what is done, and what we do next}
 \author{Team 21: Arman Samayam and Padmapriya Venkatesh\\
-\small DS-GA 3001 Visualization for Machine Learning, NYU, Fall 2026 $\cdot$ Status as of November 26, 2026}
+\small DS-GA 3001 Visualization for Machine Learning, NYU, Fall 2026 $\cdot$ Status as of November 27, 2026}
 \date{}
 
 \begin{document}
@@ -40,10 +40,10 @@ show in an interactive tool that these mistakes reshuffle the middle of the AI l
 not the top. Because the models can all be wrong together, a person still makes the final call.
 
 \smallskip
-\textbf{Where we are.} The data, analysis, tool and report are built. Because we could not recruit
-experts over Thanksgiving week, we replaced the planned expert study with three \emph{usage
-scenarios}. What remains is a few checks between the two of us, the final report edits, and the
-presentation.}
+\textbf{Where we are.} The data, analysis, tool and report are built, and the checks between the two
+of us are done. Because we could not recruit experts over Thanksgiving week, we present three
+\emph{usage scenarios} on December 1, then run 2--3 short expert sessions with the course TAs before
+the final report. What remains: the final report edits, the presentation, and those sessions.}
 
 \section*{Part 1. The project}
 
@@ -125,7 +125,8 @@ A website built with D3: \url{https://armansam17.github.io/Benchmark-Cartography
     comparisons between near-identical models.
   \item \textbf{New suspected errors.} 289 unchecked questions look strongly suspicious, for example
     the \emph{Star Trek II} Vulcan (key: Helen Hunt; top models: Kirstie Alley) and ``which is
-    \emph{not} a primary facial expression'' (key: surprise; top models: love).
+    \emph{not} a primary facial expression'' (key: surprise; top models: love). We hand-checked the 20
+    most suspicious: 17 have a wrong key, 1 is ambiguous and 2 need the source text to judge.
 \end{enumerate}
 
 \section*{Part 2. What changed: usage scenarios instead of an expert study}
@@ -140,7 +141,12 @@ and we could not get participants to reply in time.
 So we replaced it with \textbf{usage scenarios}, a standard way to evaluate visualization tools: we
 walk through real tasks in the deployed tool, step by step, with real questions and numbers anyone can
 reproduce. We are honest in the report that this shows what the tool \emph{makes possible}, not how
-well other people use it, and that running the expert study is the main next step.
+well other people use it.
+
+\textbf{Revised plan.} Usage scenarios carry the December 1 presentation. After it, when people are
+back from the break, we run 2--3 short expert sessions (about 20 minutes each) with the course TAs,
+using the protocol and study mode that are already built, and add their feedback to the final report
+due December 14.
 
 \section{The three scenarios}
 
@@ -191,40 +197,40 @@ core views, model subsets and study mode work \\
 \done & Report draft & 8 pages plus references; Section 6 rewritten as usage scenarios with a new
 figure; abstract, research question 4, discussion, limitations and conclusion updated \\
 \done & Explainers & A beginner's explainer and this status document (\texttt{docs/}) \\
+\done & Top-20 hand-check & The 20 most suspicious unreviewed questions: 17 wrong keys, 1 ambiguous,
+2 need the source (\texttt{results/handcheck\_top20.csv}) \\
+\done & Report checks & Star Trek and facial-expression keys confirmed wrong; ``21 vs.\ 35 swaps''
+reading confirmed; p-value formula in \texttt{analysis/02\_ranking.py} matches the tool and report \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
 \section{What we do now}
 
-Five red placeholders remain in the report. The plan, in order:
+The checks between us are done. The plan from here, in order:
 
 \begin{center}\small
 \begin{tabularx}{\linewidth}{@{}p{0.4cm}Yp{2.4cm}p{2.3cm}@{}}
 \toprule
 & \textbf{Task} & \textbf{Who} & \textbf{When} \\
 \midrule
-\todo & Hand-check the two suspected new wrong keys (Star Trek, facial expression); remove the
-``pending confirmation'' note & Both & Nov 26--27 \\
-\todo & Confirm the reading of ``removing our own top flags swaps fewer pairs than random'' (21 vs.\
-35) & Arman & Nov 27 \\
-\todo & HELM: state that the cross-check was not done, or drop the sentence & Both & Nov 27 \\
-\todo & Make Arman's p-value formula match the tool and report & Arman & Nov 27 \\
-\todo & Optional: hand-check the top 20 suspected errors and report how many are wrong & Both & if time \\
-\todo & Optional: short note to the TA that the live study was replaced by usage scenarios, and a
-15-minute async form if anyone can still help & Padmapriya & Nov 27 \\
-\todo & Fill or delete every placeholder, recompile, proofread & Padmapriya & Nov 28 \\
-\todo & Commit and push the report, figures, docs and study files (pushed by Padmapriya) & Padmapriya & Nov 28 \\
+\todo & Report: add the top-20 result, remove the ``pending confirmation'' and ``confirm this
+interpretation'' notes, and drop the HELM sentence & Padmapriya & Nov 28 \\
+\todo & Note to the TAs: the live study before Dec 1 became usage scenarios; ask whether each can
+give a 20-minute session in the week of Dec 2 & Padmapriya & Nov 28 \\
+\todo & Fill or delete every remaining placeholder, recompile, proofread, push & Padmapriya & Nov 28 \\
 \todo & Slides (about 10) and a 3-minute live demo: map $\rightarrow$ virology question
 $\rightarrow$ mirror trap $\rightarrow$ leaderboard & Both & by Nov 30 \\
-\todo & Rehearse the presentation & Both & before Dec 1 \\
+\todo & Rehearse the presentation, with a recorded demo as backup & Both & Nov 30 \\
+\todo & Present & Both & Dec 1 \\
+\todo & Run 2--3 expert sessions (study mode, \texttt{study/expert\_study\_protocol.md}); one
+facilitates, one takes notes & Both & Dec 2--10 \\
+\todo & Add an expert-feedback subsection to the report; final proofread and submit & Both & by Dec 14 \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-\textbf{Course dates.} Polish by November 30; presentation December 1 or 8; final report December 14.
-Our own target is to have the report final by November 28 so the remaining time goes to the
-presentation.
+\textbf{Course dates.} Presentation December 1; final report December 14.
 
 \section{Deliverables at the end}
 \begin{itemize}
