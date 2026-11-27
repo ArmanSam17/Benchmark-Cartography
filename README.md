@@ -113,8 +113,8 @@ finding errors nobody checked, telling wrong keys from hard questions, and measu
 effect. `results/handcheck_top20.csv` is our hand-check of the 20 most suspicious questions that
 MMLU-Redux did not review (17 wrong keys, 1 ambiguous, 2 need the source text).
 
-**Expert sessions (planned Dec 2-10, for the final report).** 2-3 short think-aloud sessions with the
-course TAs. `study/expert_study_protocol.md` is the session script, the facilitator rules, the analysis
+**Expert sessions (planned Dec 2-10, for the final report).** 2-3 short think-aloud sessions with people who
+work on AI evaluation. `study/expert_study_protocol.md` is the session script, the facilitator rules, the analysis
 plan and the log template (RQ4). Run sessions in study mode (the tool URL with `?study` added, or
 `http://localhost:8766/?study` locally), which hides all MMLU-Redux labels and adds the fixed
 8-question triage set from `tool/data/study_set.json`. The answer key for that set is in
