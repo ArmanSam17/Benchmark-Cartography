@@ -328,8 +328,9 @@ proposal, and it is useful to report.
 One contrast is worth noting. Removing the 370 questions \emph{our} score ranks most suspicious
 swaps only 21 pairs, fewer than equally hard random questions (matched mean 35; computed by
 \texttt{analysis/02\_ranking.py}). Questions the top tier rejects tend to be missed by every model,
-so they separate models less than ordinary hard questions do. \fillin{Arman: confirm this
-interpretation or replace it.}
+so they separate models less than ordinary hard questions do: removing a question every model gets
+wrong takes the same point from every model and leaves the order unchanged. For these questions,
+correcting the key moves the ranking; deleting them does not.
 
 \subsection{Robustness to the choice of models}
 
@@ -357,19 +358,23 @@ share a base model do not drive the result: keeping only the strongest model per
 highest AUPRC. The ranking effect shrinks with fewer models, as expected, since there are fewer pairs
 and wider gaps between them. With one model per family no pair swaps, so the reordering in the full
 leaderboard happens among closely related models. Excluding the two models trained on MMLU-named data
-changes nothing. \fillin{HELM cross-check: not done; say so or drop.}
+changes nothing.
 
 \subsection{Likely errors outside MMLU-Redux}
 
 Of the 8,343 questions MMLU-Redux did not review, 630 have top-tier confidence below 0.2, and 289 of
 those also have at least 80\% of the top tier agreeing on one alternative (listed in
-\texttt{results/candidates\_outside\_redux.csv}). Precision among Redux-checked questions suggests
-many of these are wrong keys, but we have hand-checked only a few. Two examples from our study set,
-\fillin{pending confirmation by both authors}: \emph{miscellaneous/468} asks which actress played the
+\texttt{results/candidates\_outside\_redux.csv}). We hand-checked the 20 most suspicious of them
+(lowest top-tier confidence; \texttt{results/handcheck\_top20.csv}): 17 have a wrong key, 1 is
+ambiguous and 2 could not be judged without the source text. The ambiguous one,
+\emph{professional\_medicine/176}, is a near-trap: the antibiotic history suggests \emph{C.\ difficile},
+which 93\% of the top tier choose, but the stated Hektoen agar culture supports the key,
+\emph{Salmonella}. Two further examples from our study set, both confirmed by us:
+\emph{miscellaneous/468} asks which actress played the
 Vulcan Saavik in \emph{Star Trek II}; the key says Helen Hunt, while 83\% of the top tier choose Kirstie
 Alley, who played the role. \emph{high\_school\_psychology/53} asks which is \emph{not} a primary facial
 expression; the key says surprise, which is one of the basic expressions, and 97\% of the top tier
-choose love. \fillin{optional: hand-check the top 20 candidates and report how many are wrong keys.}
+choose love.
 
 \section{Usage Scenarios (RQ4)}
 \label{sec:study}
@@ -438,8 +443,6 @@ disagreement (unanimous vs.\ split, top tier vs.\ all models, rising vs.\ flat w
 the answer the models propose instead, or the consequence for the ranking against a matched baseline.
 Each scenario needed at least one of these to reach its conclusion.
 
-\fillin{Optional: if any practitioner feedback arrives (async form), add one short paragraph with
-1--2 quotes here; otherwise delete this line.}
 
 \section{Discussion and Limitations}
 
@@ -476,7 +479,8 @@ disagreement separates wrong keys from hard questions that 2PL IRT scores alike,
 a strong consensus can still be wrong, so the tool leaves the verdict to a person.
 
 \textbf{Team contributions.} Padmapriya Venkatesh built the data pipeline, scores and 2PL fit (Stage 1)
-and the D3 tool (Stage 3). Arman Samayam led the detection and ranking analyses (Stage 2). Both
+and the D3 tool (Stage 3). Arman Samayam led the detection and ranking analyses (Stage 2) and hand-checked the top 20
+candidate errors. Both
 designed the expert-study protocol, wrote the usage scenarios and wrote the report.
 
 \textbf{Reproducibility.} Code, cached data with checksums, and all scripts are at
