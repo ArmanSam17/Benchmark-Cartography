@@ -89,7 +89,7 @@ for name, rm in [("Remove Redux-flawed questions", redux_bad),
     rows.append({"action": name, "questions": int(rm.sum()), "pair swaps": sw,
                  "kendall tau": round(kendalltau(base, new)[0], 4),
                  "matched random: mean swaps": round(null_m.mean(), 1),
-                 "p (matched)": round((null_m >= sw).mean(), 3),
+                 "p (matched)": round((1 + (null_m >= sw).sum()) / (REPS + 1), 3),
                  "plain random: mean swaps": round(null_p.mean(), 1)})
     print(f"done: {name}")
 
