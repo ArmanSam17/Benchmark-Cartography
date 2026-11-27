@@ -1,0 +1,21 @@
+#,Question ID,Official key,Strong models' answer,Top-30 agree,Verdict,Why (a few words)
+1,miscellaneous/303,FEMA,Fannie Mae,1.0,a,FEMA is the emergency agency; Fannie Mae is the mortgage association
+2,college_medicine/135,First test is always harder,Critiques his study methods,0.97,a,Reflecting on study methods predicts improvement; the key is an excuse
+3,high_school_biology/241,Deciduous forests,Taiga,0.97,a,Taiga = cold winters + pine forests; deciduous trees drop leaves
+4,moral_disputes/166,Build grit,Minimize distorted thinking,1.0,a,CBT is about correcting distorted thinking
+5,econometrics/42,Includes too many variables,Includes as few variables as possible,1.0,a,Parsimonious means as few variables as needed; key is the opposite
+6,virology/107,Interferon,Direct-acting antivirals,1.0,a,"Sofosbuvir-type antivirals replaced interferon (""most recently"")"
+7,moral_disputes/77,Harm their ability to learn,All of the above,1.0,d,"Depends on the exact text; ""all of the above"" seems likely"
+8,professional_law/524,"No, state-of-the-art tank","Yes, highly significant risk even with care",0.9,a,Abnormally dangerous activity = strict liability; care doesn't matter
+9,virology/83,Infecting only gay people,Infecting every country in the world,0.97,a,HIV is found worldwide; the key is false (and offensive)
+10,moral_disputes/89,Privacy,Life,0.9,d,Depends on Nathanson's specific argument; can't verify
+11,prehistory/55,Monumental works,All of the above,1.0,a,All three are standard signs of a complex society (fairly sure)
+12,moral_disputes/274,A causal consequence of hate speech,Harm from the attitude expressed,0.8,a,Expressive harm is by definition about what the act expresses (fairly sure)
+13,virology/127,SE Asia,Africa and S. America,1.0,a,"Lassa (Africa), Junin/Machupo (S. America) are arenaviruses"
+14,high_school_psychology/89,Existential therapy,Behavior therapy,0.97,a,Step-by-step exposure + relaxation = systematic desensitization (behavior therapy)
+15,virology/74,Reduce sampling variation,Avoid observer and subject bias,0.93,a,Blinding prevents bias; it doesn't affect sampling variation
+16,virology/126,RNA genome with RT,Circular ds DNA with T antigen,0.93,a,Polyomaviruses are small circular dsDNA viruses with T antigens
+17,professional_law/1369,"No, reporter didn't promise","No, truthful lawfully obtained info",0.97,a,"Free press protects publishing truthful, lawfully obtained info"
+18,professional_medicine/176,Salmonella typhi,Clostridium difficile,0.93,b,"Antibiotic history points to Clostridium difficile, but the Hektoen agar culture supports the key (Salmonella); conflicting clues"
+19,moral_disputes/36,Non-consensual,Deliberately non-procreative,0.97,a,"For Aquinas, ""unnatural"" = deliberately non-procreative acts"
+20,professional_law/648,Conspiracy to commit robbery,Receiving stolen property,0.9,a,"Leader didn't plan or agree (surprised), but knowingly kept stolen goods"
